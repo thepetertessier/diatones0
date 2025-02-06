@@ -1,3 +1,34 @@
-[gd_scene format=3 uid="uid://b7r3t55s2sqg6"]
+[gd_scene load_steps=2 format=3 uid="uid://b7r3t55s2sqg6"]
+
+[ext_resource type="Script" path="res://scripts/audio_thing.gd" id="1_eq1m1"]
 
 [node name="Game" type="Node2D"]
+
+[node name="AudioThing" type="Node" parent="."]
+script = ExtResource("1_eq1m1")
+
+[node name="PitchLabel" type="Label" parent="AudioThing"]
+unique_name_in_owner = true
+offset_left = -240.0
+offset_top = -60.0
+offset_right = 183.0
+offset_bottom = 15.0
+theme_override_font_sizes/font_size = 40
+text = "Detected pitch: "
+
+[node name="VolumeLabel" type="Label" parent="AudioThing"]
+unique_name_in_owner = true
+offset_left = -243.0
+offset_top = 13.0
+offset_right = 180.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 40
+text = "Detected volume: "
+
+[node name="WaveformLine" type="Line2D" parent="AudioThing"]
+points = PackedVector2Array(-240, 118)
+
+[node name="PitchMarker" type="Marker2D" parent="AudioThing"]
+position = Vector2(62, 210)
+
+[node name="Camera2D" type="Camera2D" parent="."]
